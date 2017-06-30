@@ -1,0 +1,12 @@
+<div class="container" style="margin-top: 20px;">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-3" *ngFor="let result of searchResult" style="height: 450px; margin-bottom: 20px;">
+      <!--{{ result | json }}-->
+      <img src="{{ result.thumbnailUrl }}"  class="img-thumbnail" *ngIf="result.thumbnailUrl" alt="Thumbnail" title="{{ result.title }}" />
+      <img src="assets/img/slider_no_thumb.gif" class="img-thumbnail" *ngIf="!result.thumbnailUrl">
+      <h3>{{ result.title }}</h3>
+      <p *ngIf="result.description" style="word-wrap: break-word;">{{ result.description }}</p>
+      <a href="{{ result.videoUrl }}" class="btn btn-default" target="_blank">Watch</a>
+    </div>
+  </div>
+</div>
